@@ -133,17 +133,18 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    padding: 1rem;
 }
 
 .pagination button {
-    padding: .25rem .5rem;
-    margin: .25rem 0;
+    margin: 1rem 0.5rem;
+    padding: 1rem;
+    width: 100%;
     font-size: .625rem;
     color: #fff;
     background-color: #6c79db;
     border: none;
     border-radius: 1rem;
+    cursor: pointer;
 }
 
 @media screen and (min-width: 380px) {
@@ -155,6 +156,9 @@
 @media screen and (min-width: 576px) {
     .pokemons {
         grid-template-columns: 1fr 1fr 1fr;
+    }
+    .pagination button {
+        width: 33%;
     }
 }
 
