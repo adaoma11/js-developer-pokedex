@@ -27,8 +27,22 @@ function loadPokemonItens(offset, limit) {
     pokeApi.getPokemons(offset, limit).then((pokemons = []) => {
         const newHtml = pokemons.map(convertPokemonToLi).join('')
         pokemonList.innerHTML += newHtml
+        scrollPageDown();
     })
 }
+
+function scrollPageDown() {
+    
+    const scrollDelay = setInterval(() => {
+        window.scrollBy(0,15)
+    },10);
+
+    setTimeout(() => {
+        clearInterval(scrollDelay)
+        console.log('entrou no clearInterval')
+    }, 2000);
+}
+
 
 loadPokemonItens(offset, limit)
 
