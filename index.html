@@ -20,19 +20,148 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;700&display=swap" rel="stylesheet">
 
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" 
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <!-- Nosso CSS -->
     <link rel="stylesheet" href="/assets/css/global.css">
     <link rel="stylesheet" href="/assets/css/pokedex.css">
     <link rel="stylesheet" href="/assets/css/pokemon-modal.css">
+
+    <!-- JavaScript -->
+    <script src="/assets/js/pokemon-model.js" defer></script>
+    <script src="/assets/js/pokemon-modal.js" defer></script>
+    <script src="/assets/js/poke-api.js" defer></script>
+    <script src="/assets/js/main.js" defer></script>
 </head>
 
 <body>
+    <!-- Modal to display the details of a specific Pokemon -->
+    <section id="pokemon-modal" class="hidden">
+        
+        <!-- Modal header -->
+        <header class="grass">
+            <div id="pokemon-icons">
+                <i class="fa-solid fa-arrow-left" id="back-icon"></i>
+                <i class="fa-regular fa-heart" id="fav-pokemon-icon"></i>
+            </div>
+            <div id="pokemon-title">
+                <div id="pokemon-subtitle">
+                    <h2>Bulbasaur</h2>
+                    <ol class="pokemon-types">
+                        <li>Grass</li>
+                        <li>Poison</li>
+                    </ol>
+                </div>
+                <span class="pokemon-id">#001</span>
+            </div>
+            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg" alt="Bulbasaur">
+        </header>
+
+        <!-- Modal Content -->
+        <div class="pokemon-content">
+            <nav class="modal-tabs">
+                <ul>
+                    <li id="about-tab" class="selected-tab">About</li>
+                    <li id="base-stats-tab">Base Stats</li>
+                    <li id="evolution-tab">Evolution</li>
+                    <li id="moves-tab">Moves</li>
+                </ul>
+            </nav>
+
+            <section id="about">
+                <table>
+                    <tr>
+                        <td>Species</td>
+                        <td>Seed</td>
+                    </tr>
+                    <tr>
+                        <td>Height</td>
+                        <td>70cm</td>
+                    </tr>
+                    <tr>
+                        <td>Weight</td>
+                        <td>15.2lbs (6.9kg)</td>
+                    </tr>
+                    <tr>
+                        <td>Abilities</td>
+                        <td>Overgrow, Chlorophyl</td>
+                    </tr>
+                </table>
+
+                <h2>Breeding</h2>
+
+                <table>
+                    <tr>
+                        <td>Gender</td>
+                        <td>
+                            <span class="male"><i class="fa-solid fa-mars"></i>87.5%</span>
+                            <span class="female"><i class="fa-solid fa-venus"></i>12.5%</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Egg Groups</td>
+                        <td>Monster</td>
+                    </tr>
+                    <tr>
+                        <td>Egg Cycles</td>
+                        <td>Grass</td>
+                    </tr>
+                </table>
+
+            </section>
+            <section id="base-stats" class="hidden">
+                <table>
+                    <tr>
+                        <td>HP</td>
+                        <td>45</td>
+                        <td><span class="stats-bar" id="hp-bar"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Attack</td>
+                        <td>60</td>
+                        <td><span class="stats-bar" id="attack-bar"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Defense</td>
+                        <td>48</td>
+                        <td><span class="stats-bar" id="defense-bar"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Sp. Atk</td>
+                        <td>65</td>
+                        <td><span class="stats-bar" id="sp-atk-bar"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Sp. Def</td>
+                        <td>65</td>
+                        <td><span class="stats-bar" id="sp-def--bar"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Speed</td>
+                        <td>45</td>
+                        <td><span class="stats-bar" id="speed-bar"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Total</td>
+                        <td>317</td>
+                        <td><span class="stats-bar" id="total-bar"></span></td>
+                    </tr>
+                </table>
+
+                <h2>Type defenses</h2>
+                <p>The effectiveness of each type on Charmander.</p>
+            </section>
+            <section id="evolution" class="hidden"></section>
+            <section id="moves" class="hidden"></section>
+        </div>
+    </section>
+
+    <!-- Main Content -->
     <section class="content">
         <h1>Pokedex</h1>
-
-        <div class="pokemon-modal hidden">
-
-        </div>
 
         <ol id="pokemonList" class="pokemons">
             <!-- ..... Pokemons here ..... -->
@@ -45,10 +174,6 @@
         </div>
     </section>
 
-    <!-- Nosso JS -->
-    <script src="/assets/js/pokemon-model.js"></script>
-    <script src="/assets/js/poke-api.js"></script>
-    <script src="/assets/js/main.js"></script>
 </body>
 
 </html>

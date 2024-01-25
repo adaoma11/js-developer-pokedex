@@ -7,7 +7,7 @@ let offset = 0;
 
 function convertPokemonToLi(pokemon) {
     return `
-        <li class="pokemon ${pokemon.type}">
+        <li class="pokemon ${pokemon.type}" onclick="openModal(${pokemon.number})">
             <span class="number">#${pokemon.number}</span>
             <span class="name">${pokemon.name}</span>
 
@@ -27,8 +27,7 @@ function loadPokemonItens(offset, limit) {
     pokeApi.getPokemons(offset, limit).then((pokemons = []) => {
         const newHtml = pokemons.map(convertPokemonToLi).join('');
         pokemonList.innerHTML += newHtml;
-        scrollPageDown();
-    })
+    }).then(scrollPageDown());
 }
 
 function scrollPageDown() {
@@ -38,7 +37,7 @@ function scrollPageDown() {
 
     setTimeout(() => {
         clearInterval(scrollDelay)
-    }, 2000);
+    }, 1000);
 }
 
 loadPokemonItens(offset, limit)

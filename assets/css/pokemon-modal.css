@@ -1,0 +1,188 @@
+#pokemon-modal {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background-color: #fff;
+    z-index: 5;
+}
+
+/* Header */
+#pokemon-modal header {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: -3.5rem;
+    padding: 3rem 2rem 0 2rem;
+    color: #fff;
+}
+
+#pokemon-modal header #pokemon-icons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 0 2rem 0;
+    font-size: 1.2rem;
+}
+
+#pokemon-modal header #pokemon-icons i {
+    cursor: pointer
+}
+
+#pokemon-modal header #pokemon-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+}
+
+#pokemon-modal header #pokemon-subtitle {
+    display: flex;
+    flex-direction: column;
+}
+
+#pokemon-modal header #pokemon-subtitle h2 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+#pokemon-modal header .pokemon-id {
+    font-size: 1.2rem;
+}
+
+#pokemon-modal header #pokemon-subtitle ol.pokemon-types {
+    display: flex;
+    list-style: none;
+    margin: .5rem 0 0 0;
+    padding: 0;
+    font-size: .8rem;
+}
+
+ol.pokemon-types li {
+    background-color: rgba(255,255,255,.2);
+    margin-right: .3rem;
+    padding: .3rem .8rem;
+    border-radius: 1rem;
+}
+
+#pokemon-modal header img {
+    margin: 2rem auto;
+}
+
+/* Content */
+.pokemon-content {
+    background-color: #fff;
+    border-radius: 2.5rem;
+    padding: 3rem 2rem;
+    color: #aaa;
+}
+
+.pokemon-content h2 {
+    color: #666;
+    font-size: 1.2rem;
+}
+
+/* Navbar */
+nav.modal-tabs ul {
+    display: flex;
+    list-style: none;
+    margin: 1rem 0 1.5rem 0;
+    padding: 0;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid #ddd;
+}
+
+nav.modal-tabs ul li {
+    position: relative;
+    top: 2px;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid #ddd;
+    cursor: pointer;
+}
+
+nav.modal-tabs ul li:hover {
+    border-bottom: 2px solid #7178D8;
+}
+
+.selected-tab {
+    color: #333;
+    border-bottom: 2px solid #7178D8 !important;
+}
+
+/* Sections Tables */
+.pokemon-content table {
+    margin-bottom: 2rem;
+}
+
+.pokemon-content table td {
+    height: 2rem;
+}
+
+.pokemon-content table td:first-child {
+    width: 7rem;
+}
+
+.pokemon-content table td:nth-child(2) {
+    color: #666;
+}
+
+/* Section About */
+
+
+.male {
+    margin-right: 1.5rem;
+}
+
+.male i, .female i {
+    margin-right: .5rem;
+}
+.male i {
+    color: #6C79DC;
+}
+
+.female i {
+    color: #f53580;
+}
+
+/* Section Base Stats */
+.pokemon-content table td:nth-child(3) {
+    width: 65%;
+    padding-left: 1rem;
+}
+
+.stats-bar {
+    display: block;
+    width: 100%;
+    border-radius: .5rem;
+    height: .2rem;
+}
+
+#hp-bar {
+    background: linear-gradient(to right, #FC6F6F 45%, 45%, #ddd);
+}
+#attack-bar {
+    background: linear-gradient(to right, #46BF7A 60%, 60%, #ddd);
+}
+#defense-bar {
+    background: linear-gradient(to right, #FC6F6F 48%, 48%, #ddd);
+}
+
+#sp-atk-bar {
+    background: linear-gradient(to right, #46BF7A 65%, 65%, #ddd);
+}
+
+#sp-def--bar {
+    background: linear-gradient(to right, #46BF7A 65%, 65%, #ddd);
+}
+
+#speed-bar {
+    background: linear-gradient(to right, #FC6F6F 45%, 45%, #ddd);
+}
+
+#total-bar {
+    background: linear-gradient(to right, #46BF7A 60%, 60%, #ddd);
+}
+
+/* Section Evolution */
+
+/* Section Moves */
