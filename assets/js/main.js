@@ -23,11 +23,12 @@ function convertPokemonToLi(pokemon) {
     `
 }
 
-function loadPokemonItens(offset, limit) {
-    pokeApi.getPokemons(offset, limit).then((pokemons = []) => {
+async function loadPokemonItens(offset, limit) {
+    await pokeApi.getPokemons(offset, limit).then((pokemons = []) => {
         const newHtml = pokemons.map(convertPokemonToLi).join('');
         pokemonList.innerHTML += newHtml;
-    }).then(scrollPageDown());
+        scrollPageDown();
+    });
 }
 
 function scrollPageDown() {
@@ -49,7 +50,6 @@ loadMoreButton.addEventListener('click', () => {
     if (qtdRecordsWithNexPage >= maxRecords) {
         const newLimit = maxRecords - offset;
         loadPokemonItens(offset, newLimit);
-
         loadMoreButton.parentElement.removeChild(loadMoreButton);
     } else {
         loadPokemonItens(offset, limit);
